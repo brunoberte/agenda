@@ -1,0 +1,47 @@
+
+{% extends 'basetemplate.html.twig' %}
+
+{% block body %}
+    <h1>Dashboard</h1>
+
+    <section class="row text-center">
+        <div class="col-6">
+            <h4>Top 10 DDD codes</h4>
+            <table class="table table-sm table-bordered">
+                <thead>
+                <tr>
+                    <th>DDD</th>
+                    <th>Qty</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for ddd,qty in ddd_data %}
+                    <tr>
+                        <td>{{ ddd }}</td>
+                        <td>{{ qty }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+            <h4>Top 10 mail domains</h4>
+            <table class="table table-sm table-bordered">
+                <thead>
+                <tr>
+                    <th>domain</th>
+                    <th>Qty</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for domain,qty in mail_data %}
+                    <tr>
+                        <td>{{ domain }}</td>
+                        <td>{{ qty }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}
